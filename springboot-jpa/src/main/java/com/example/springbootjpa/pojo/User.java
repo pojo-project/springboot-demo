@@ -7,10 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-//@Entity
+//@Entity  会自动创建这个表，如果这个表存在
 // public class UserEntity{...} 表名 user_entity
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})//懒加载对象不转json
+//懒加载：需要时才加载
 public class User {
     // @Id - 标明主键字段
 // @GeneratedValue(strategy=GenerationType.IDENINY)
@@ -20,7 +21,7 @@ public class User {
     @Id
     @GeneratedValue
     private Long id;
-    @Column(name = "name",nullable = true,length = 2000)
+    @Column(name = "name",nullable = true,length = 2000)//和数据库的字段的映射 ，并加规则
     private String name;
     @Column(name = "age",nullable = true,length = 4)
     private Integer age;
