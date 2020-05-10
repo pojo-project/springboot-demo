@@ -18,10 +18,10 @@
 server:
   port: 8880
   #使用缩进的格式区别，properties是使用server.port
+  #和port同级
+  #    #类似restmapper  在你访问工程的时候都要加这名在项目前
   servlet:
-    #和port同级
-    #类似restmapper  在你访问工程的时候都要加这名在项目前
-    context-path:/java888
+    context-path: /java
 #自定义属性 记得在冒号后面加空格
 offcn_ip: 1.1.1.1
 offcn_port: 9999
@@ -29,3 +29,7 @@ offcn_port: 9999
 userBody:
   name: 测试
   password: 123456
+spring:
+  profiles:
+    active: test
+#如果定义了多个配置文件，想要读取这些配置文件
