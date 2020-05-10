@@ -1,0 +1,31 @@
+#web.upload-path 是我自定义名
+#  web.upload-path=/Users/travelround/Desktop/springboot/pic1/
+#  spring.mvc.static-path-pattern=/**
+#  spring.resources.static-locations=classpath:/META-INF/resources/,classpath:/resources/,
+#  classpath:/static/,classpath:/public/,file:${web.upload-path}
+#web.upload-path：自定义的属性，指定了一个路径，注意要以/结尾；
+#spring.mvc.static-path-pattern=/**：表示所有的访问都经过静态资源路径； 为IP实际的访问路劲
+#spring.resources.static-locations：配置静态资源路径。此处目的是将电脑本地的路径添加成静态资源路径， 指定静态资源的位置
+#但这里的配置会覆盖默认配置，若只写了电脑本地路径，默认的static、public等这些路径将不再被当作静态资源路径，
+#所以需要将默认的也加上。最末尾的file:${web.upload-path}之所有要加file:是因为指定的是一个具体的硬盘路径，
+#其他的使用classpath表示系统环境变量。
+
+
+#配置文件也有两种格式，一种是properties一种是yml后缀文件
+#区别：书写格式的不同
+
+#使用系统默认
+server:
+  port: 8880
+  #使用缩进的格式区别，properties是使用server.port
+  servlet:
+    #和port同级
+    #类似restmapper  在你访问工程的时候都要加这名在项目前
+    context-path:/java888
+#自定义属性 记得在冒号后面加空格
+offcn_ip: 1.1.1.1
+offcn_port: 9999
+#使用注解获取这里定义的对象
+userBody:
+  name: 测试
+  password: 123456
