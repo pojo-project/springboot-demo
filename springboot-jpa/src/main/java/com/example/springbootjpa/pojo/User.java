@@ -26,6 +26,9 @@ public class User {
     @Column(name = "age",nullable = true,length = 4)
     private Integer age;
 
+    public User() {
+    }
+
     public User(Long id, String name, Integer age) {
         this.id = id;
         this.name = name;
